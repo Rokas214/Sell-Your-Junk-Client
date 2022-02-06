@@ -1,14 +1,9 @@
 import React from 'react';
-import { useState, useContext } from 'react';
-import { AuthContext } from '../context/Auth';
+import { useState } from 'react';
 
-
-const Form = () => {
+const Register = () => {
 
     const [userInputs, setUserInputs] = useState()
-    const authContext = useContext(AuthContext)
-
-    console.log(authContext.token)
 
 
   return (
@@ -24,14 +19,7 @@ const Form = () => {
                     body: JSON.stringify(userInputs)
             })
             .then(res => res.json())
-            .then(data => {
-                if(!data.token){
-                    return alert("error")
-                }else{
-                    authContext.setToken(data.token)
-                    alert("success")
-                }
-            })
+            .then(data => console.log(data))
         })} >
             <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='email'  />
             <input type="password" onChange={((e) => setUserInputs({...userInputs, password: e.target.value}))}  placeholder='password'  />
@@ -42,4 +30,4 @@ const Form = () => {
 )
 };
 
-export default Form;
+export default Register;
