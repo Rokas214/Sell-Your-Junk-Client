@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { AuthContext } from '../context/Auth';
-import {Home} from "../pages/home"
+import {Home} from "../pages/Home"
 
 
 const Form = () => {
@@ -9,7 +9,7 @@ const Form = () => {
     const [userInputs, setUserInputs] = useState()
     const authContext = useContext(AuthContext)
 
-    console.log(authContext.token)
+    
 
 
   return (
@@ -29,15 +29,13 @@ const Form = () => {
                 if(!data.token){
                     return alert("error")
                 }else{
-                    authContext.setToken(data.token)
-                    alert("success")
+                    localStorage.setItem("token", data.token)            
                 }
             })
         })} >
             <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='email'  />
             <input type="password" onChange={((e) => setUserInputs({...userInputs, password: e.target.value}))}  placeholder='password'  />
             <button type='submit' >Submit</button>
-            <button  >Home</button>
             
         </form>
     </div>
