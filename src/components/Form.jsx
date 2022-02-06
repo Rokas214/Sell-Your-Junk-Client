@@ -29,7 +29,8 @@ const Form = () => {
                 if(!data.token){
                     return alert("error")
                 }else{
-                    localStorage.setItem("token", data.token)            
+                    localStorage.setItem("token", data.token)
+                    
                 }
             })
         })} >

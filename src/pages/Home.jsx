@@ -1,9 +1,9 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import React from 'react';
 import { AuthContext } from '../context/Auth'
 
 const Home = () => {
-    const authContext = useContext(AuthContext)
+    const [getData,setData] = useState()
     
 
     useEffect(() => {
@@ -13,11 +13,16 @@ const Home = () => {
             },
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                
+                setData(data.msg)
+            })
+            .catch(err => alert("error"))
     },[])
   return (
     <div>
-        
+        {!getData && <h1>Loading...</h1> }
+        {getData && <h1>{getData}</h1> }
     </div>
   )
 
