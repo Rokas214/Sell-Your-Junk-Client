@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { AuthContext } from '../context/Auth';
+import {Home} from "../pages/home"
 
 
 const Form = () => {
@@ -36,6 +37,7 @@ const Form = () => {
             <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='email'  />
             <input type="password" onChange={((e) => setUserInputs({...userInputs, password: e.target.value}))}  placeholder='password'  />
             <button type='submit' >Submit</button>
+            <button  >Home</button>
             
         </form>
     </div>
