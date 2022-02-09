@@ -1,9 +1,10 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import React from 'react';
-import { AuthContext } from '../context/Auth'
+import { Navigate, useLocation, Redirect } from "react-router-dom";
 
 const Home = () => {
     const [getData,setData] = useState()
+    const location = useLocation()
     
 
     useEffect(() => {
@@ -13,10 +14,8 @@ const Home = () => {
             },
         })
             .then(res => res.json())
-            .then(data => {
-                
-                setData(data.msg)
-            })
+            .then(data => setData(data.msg)
+            )
             .catch(err => alert("error"))
     },[])
   return (

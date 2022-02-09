@@ -30,6 +30,8 @@ const Form = () => {
                     return alert("error")
                 }else{
                     localStorage.setItem("token", data.token)
+                    localStorage.setItem("email", userInputs.email)
+                    
                     
                 }
             })
