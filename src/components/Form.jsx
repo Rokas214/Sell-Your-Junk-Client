@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { AuthContext } from '../context/Auth';
-import {Home} from "../pages/Home"
+import "./style.css"
 
 
 const Form = () => {
@@ -14,7 +14,7 @@ const Form = () => {
 
   return (
     <div>
-        <form onSubmit={((e) => {
+        <form className='form' onSubmit={((e) => {
             e.preventDefault()
             
                 fetch('http://localhost:8080/v1/auth/login',{
@@ -36,8 +36,8 @@ const Form = () => {
                 }
             })
         })} >
-            <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='email'  />
-            <input type="password" onChange={((e) => setUserInputs({...userInputs, password: e.target.value}))}  placeholder='password'  />
+            <input type="Email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='email'  />
+            <input type="Password" onChange={((e) => setUserInputs({...userInputs, password: e.target.value}))}  placeholder='password'  />
             <button type='submit' >Submit</button>
             
         </form>

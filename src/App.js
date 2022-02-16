@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css";
 import Form from "./components/Form";
 import Home from "./pages/Home";
 import Add from "./pages/Add";
@@ -8,10 +9,18 @@ import Products from "./pages/Products";
 function App() {
 	return (
 		<BrowserRouter>
-			<Link to='/home'>Home</Link>
-			<Link to='/'>Login</Link>
-			<Link to='/add'>Add product</Link>
-			<Link to='/products'>All products</Link>
+			<Link className='link' to='/home'>
+				Home
+			</Link>
+			<Link className='link' to='/'>
+				Login
+			</Link>
+			<Link className='link' to='/add'>
+				Add product
+			</Link>
+			<Link className='link' to='/products'>
+				All products
+			</Link>
 			<Routes>
 				<Route exact path='/' element={<Form />} />
 				<Route exact path='/home' element={<Home />} />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ProductCard from '../components/ProductCard';
 
 
 const Products = () => {
@@ -15,9 +16,9 @@ const Products = () => {
         },[])
         
         
-  return <div>
+  return <div className='cardComp' >
       {!getData && <h1>Loading...</h1> }
-    {getData && getData.map(item => <h1 key={item.id} >{item.price}</h1> )}
+    {getData && getData.map(item => <ProductCard item={item} key={item.id} /> )}
     {console.log(getData)}
 
   </div>;
