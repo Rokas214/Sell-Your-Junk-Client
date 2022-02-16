@@ -1,4 +1,11 @@
 .link {
-	padding: 0.5rem;
+	padding: 0.7rem;
 	margin: 0.5rem;
+	text-decoration: none;
+	color: black;
+	font-size: 17px;
+}
+
+.link:hover {
+	color: rgb(0, 124, 62);
 }
