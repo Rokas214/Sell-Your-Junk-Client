@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState, useContext } from 'react';
 import { AuthContext } from '../context/Auth';
-import "./style.css"
+import "../components/style.css"
 import "../index.css"
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 
-const Form = () => {
+const Login = () => {
 
     const [notification, setNotification] = useState(false)
 
@@ -66,4 +66,4 @@ const Form = () => {
 )
 };
 
-export default Form;
+export default Login;

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./index.css";
-import Form from "./components/Form";
+import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Add from "./pages/Add";
-import Register from "./components/Register";
+import Register from "./pages/Register";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Products from "./pages/Products";
 
@@ -11,7 +11,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route exact path='/' element={<Form />} />
+				<Route exact path='/' element={<Login />} />
 				<Route exact path='/register' element={<Register />} />
 				<Route exact path='/home' element={<Home />} />
 				<Route exact path='/add' element={<Add />} />
