@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../../src/index.css"
 import "./style.css"
 import { useNavigate } from 'react-router-dom'
+import Notification from './Notification'
 
-const SingOut = () => {
+
+const SingOut = ({setNotification}) => {
     const navigate = useNavigate()
+    
+    
     
 
     function singOut(){
         localStorage.removeItem("token")
-
-        navigate("/")
+        setNotification(true)
+        setTimeout(() => {navigate("/")}, 1500)
+        
 
     }
 

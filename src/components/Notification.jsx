@@ -1,8 +1,11 @@
 import React from 'react'
+import "../components/style.css"
 
-const Notification = () => {
+const Notification = ({children}) => {
   return (
-    <div>Notification</div>
+    <div className='notification' >
+        {children}
+    </div>
   )
 }
 

@@ -3,9 +3,11 @@ import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 import SingOut from '../components/SingOut';
 import "../components/style.css"
+import Notification from '../components/Notification';
 
 const Products = () => {
 
+    const [notification, setNotification] = useState(false)
     const [getData, setData] = useState()
         useEffect(() => {
             fetch("http://localhost:8080/v1/products",{
@@ -19,20 +21,38 @@ const Products = () => {
         },[])
         
         
-  return <div className='cardComp' >
-     
-        <Link className='link' to='/home'>Home</Link>
-        <Link className='link' to='/add'>Add Product</Link>
-        <div className='singout' >
-            <SingOut />
-        </div>      
-       
+        
+  return (
+      <div className='page-width' >
 
-      {!getData && <h1>Loading...</h1> }
-    {getData && getData.map(item => <ProductCard item={item} key={item.id} /> )}
-    {console.log(getData)}
+                <div>
+                    {notification && <Notification>Successfully logged out</Notification> }
+                </div>
 
-  </div>;
+        <div  >
+
+            <div className='nav' >
+
+                <div className='links' >
+                    <Link className='link' to='/home'>Home</Link>
+                    <Link className='link' to='/add'>Add Product</Link>
+                </div>
+                <div className='singout' >
+                    <SingOut setNotification={setNotification} />
+                </div> 
+        </div>
+        <div className='cardComp'>
+
+            {!getData && <h1>Loading...</h1> }
+            {getData && getData.map(item => <ProductCard item={item} key={item.id} /> )}
+            {console.log(getData)}
+        </div>
+
+
+        </div>
+      </div>
+
+  )
 };
 
 export default Products;

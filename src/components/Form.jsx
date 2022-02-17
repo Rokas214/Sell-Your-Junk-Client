@@ -29,6 +29,8 @@ const Form = () => {
                 <Link className='link' to='/register'>
                     Register
             </Link>  
+
+            
         <div className='login-form' >
             <h1>Login</h1>
             <form className='form' onSubmit={((e) => {
