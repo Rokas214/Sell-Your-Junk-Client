@@ -1,12 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import SingOut from '../components/SingOut';
+import "../components/style.css"
 
 const Add = () => {
     const [input, setInput] = useState()
     const [error, setError] = useState(false)
     
     
-  return <div>
+  return <div className='sing' >
+      <Link className='link' to='/home'>Home</Link>
+    <Link className='link' to='/products'>All products</Link>
+      <SingOut  />
       
       <form onSubmit={((e) => {
             e.preventDefault()

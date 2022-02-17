@@ -5,6 +5,7 @@ import "./style.css"
 import "../index.css"
 
 
+
 const Register = () => {
 
     const [userInputs, setUserInputs] = useState()

@@ -55,3 +55,23 @@
 	background-color: rgba(99, 183, 252, 0.507);
 	padding: 10px;
 }
+.singout {
+	display: flex;
+	width: 80%;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.singout button {
+	padding: 0.4rem 1.8rem;
+	background-color: rgb(25, 168, 125);
+	border: 0;
+	border-radius: 0.6rem;
+	font-weight: bold;
+}
+
+.singout button:hover {
+	background-color: rgb(0, 172, 120);
+	cursor: pointer;
+	border: 1px solid black;
+}

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-import { Navigate, useLocation, Redirect } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import SingOut from "../components/SingOut";
+import "../components/style.css"
 
 const Home = () => {
+
     const [getData,setData] = useState()
     const location = useLocation()
     
@@ -20,6 +23,9 @@ const Home = () => {
     },[])
   return (
     <div>
+        <SingOut />
+        <Link className='link' to='/add'>Add Product</Link>
+        <Link className='link' to='/products'>All products</Link>
         {!getData && <h1>Loading...</h1> }
         {getData && <h1>{getData}</h1> }
     </div>

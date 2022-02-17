@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
+import { Link } from 'react-router-dom';
+import SingOut from '../components/SingOut';
+import "../components/style.css"
 
 const Products = () => {
 
@@ -17,6 +20,14 @@ const Products = () => {
         
         
   return <div className='cardComp' >
+     
+        <Link className='link' to='/home'>Home</Link>
+        <Link className='link' to='/add'>Add Product</Link>
+        <div className='singout' >
+            <SingOut />
+        </div>      
+       
+
       {!getData && <h1>Loading...</h1> }
     {getData && getData.map(item => <ProductCard item={item} key={item.id} /> )}
     {console.log(getData)}
