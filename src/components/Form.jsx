@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Form = () => {
 
-    
+    const [notification, setNotification] = useState(false)
 
     let navigate = useNavigate();
 
@@ -22,6 +22,7 @@ const Form = () => {
 
   return (
     <div>
+        {notification && <div className='notification' >Successfully logged in!</div> }
           <Link className='link' to='/'>
                     Login
                 </Link>
@@ -47,7 +48,9 @@ const Form = () => {
                     }else{
                         localStorage.setItem("token", data.token)
                         localStorage.setItem("email", userInputs.email)
-                        navigateTo("/home")
+                        setNotification(true)
+                        setTimeout(() => {navigateTo("/home")},1500)
+                        
                     }
                 })
             })} >

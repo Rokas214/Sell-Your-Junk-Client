@@ -48,3 +48,10 @@
 	margin-bottom: 1rem;
 	font-family: helvetica;
 }
+
+.notification {
+	color: black;
+	text-align: center;
+	background-color: rgba(99, 183, 252, 0.507);
+	padding: 10px;
+}
