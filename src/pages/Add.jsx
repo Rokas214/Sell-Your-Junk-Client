@@ -47,9 +47,9 @@ const Add = () => {
                     .then(data => console.log(data))
                     }
             })} >
-                <input type="text" onChange={((e) => setInput({...input,price: e.target.value}))} placeholder='Title'  />
+                <input type="text" onChange={((e) => setInput({...input,image: e.target.value}))} placeholder='Image'  />
                 <input type="text" onChange={((e) => setInput({...input,price: e.target.value}))} placeholder='Price'  />
-                <textarea type="text" onChange={((e) => setInput({...input,price: e.target.value}))} placeholder='Description' id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                <textarea type="text" onChange={((e) => setInput({...input,description: e.target.value}))} placeholder='Description' id="w3review" name="w3review" rows="4" cols="50"></textarea>
                 {error && <div>Please fill the inputs</div> }
                 <button type='submit' >Submit</button> 
             </form>

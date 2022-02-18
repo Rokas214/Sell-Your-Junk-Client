@@ -30,7 +30,7 @@ const Register = () => {
             <form className='form' onSubmit={((e) => {
                 e.preventDefault()
                 
-                    fetch('http://localhost:8080/v1/auth/login',{
+                    fetch('http://localhost:8080/v1/auth/register',{
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -40,9 +40,12 @@ const Register = () => {
                 .then(res => res.json())
                 .then(data => console.log(data))
             })} >
-                <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='email'  />
-                <input type="password" onChange={((e) => setUserInputs({...userInputs, password: e.target.value}))}  placeholder='password'  />
+                <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='Email'  />
+                <input type="password" onChange={((e) => setUserInputs({...userInputs, passwordOne: e.target.value}))} placeholder='Password'  />
+                <input type="password" onChange={((e) => setUserInputs({...userInputs, passwordTwo: e.target.value}))}  placeholder='Repeat Password'  />
+                <input type="text" onChange={((e) => setUserInputs({...userInputs, username: e.target.value}))}  placeholder='Username'  />
                 <button type='submit' >Submit</button>
+                
                 <h6>
                     Have accaunt already? 
                     <span onClick={navigateTo} style={{cursor: "pointer", color: "red", marginLeft: "5px"}} >Click Here</span> 
