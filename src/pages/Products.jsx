@@ -31,7 +31,6 @@ const Products = () => {
         <div>
             <div className='nav' >
                 <div className='links' >
-                    <Link className='link' to="/products/:id" >Product with id</Link>
                     <Link className='link' to='/home'>Home</Link>
                     <Link className='link' to='/add'>Add Product</Link>
                 </div>

@@ -47,6 +47,7 @@ const Add = () => {
                     .then(data => console.log(data))
                     }
             })} >
+                <h3 style={{"marginBottom": "3rem"}} >You can add new product here</h3>
                 <input type="text" onChange={((e) => setInput({...input,image: e.target.value}))} placeholder='Image'  />
                 <input type="text" onChange={((e) => setInput({...input,price: e.target.value}))} placeholder='Price'  />
                 <textarea type="text" onChange={((e) => setInput({...input,description: e.target.value}))} placeholder='Description' id="w3review" name="w3review" rows="4" cols="50"></textarea>
