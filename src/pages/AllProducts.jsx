@@ -4,7 +4,8 @@ import { Link,useParams } from 'react-router-dom';
 import SingOut from '../components/SingOut';
 import "../components/style.css"
 import Notification from '../components/Notification';
-const Home = () => {
+
+const AllProducts = () => {
 
     const {id} = useParams()
     const [notification, setNotification] = useState(false)
@@ -30,9 +31,8 @@ const Home = () => {
         <div>
             <div className='nav' >
                 <div className='links' >
-                    <Link className='link' to='/home'>All Products</Link>
+                    <Link className='link' to='/home'>Home</Link>
                     <Link className='link' to='/add'>Add Product</Link>
-                    <Link className='link' to='/products'>My Products</Link>
                 </div>
                 <div className='singout' >
                     <SingOut setNotification={setNotification} />
@@ -48,4 +48,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+export default AllProducts;

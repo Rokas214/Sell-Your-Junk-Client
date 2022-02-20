@@ -19,22 +19,19 @@ const Add = () => {
                 {notification && <Notification>Successfully logged out</Notification> }
             </div>
         <div className='nav' >
-
                 <div className='links' >
                     <Link className='link' to='/home'>Home</Link>
-                    <Link className='link' to='/products'>All Products</Link>
+                    <Link className='link' to='/products'>My Products</Link>
                 </div>
                 <div className='singout' >
                     <SingOut setNotification={setNotification} />
                 </div> 
         </div>
-        
         <form className='form' onSubmit={((e) => {
                 e.preventDefault()
                     if(!input){
                         setError(true)
                     }else{
-
                         fetch('http://localhost:8080/v1/add',{
                             method: "POST",
                             headers: {
@@ -55,7 +52,6 @@ const Add = () => {
                 <button type='submit' >Submit</button> 
             </form>
     </div>
-
   )
 };
 

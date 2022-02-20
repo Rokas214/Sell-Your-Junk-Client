@@ -24,18 +24,15 @@ const SinglePost = ({getId}) => {
 
   return (
     <div>
-        
-        <div className='nav' >
-
+        <div className='nav edit-container' >
                 <div className='links' >
                     <Link className='link' to='/home'>Home</Link>
-                    <Link className='link' to='/products'>All Products</Link>
+                    <Link className='link' to='/products'>My Products</Link>
                 </div>
                 <div className='singout' >
                     <SingOut setNotification={setNotification} />
                 </div> 
         </div>
-
        {getData && getData.map((item) =>   <SinglePostCard item={item} key={item.id} /> )}
     </div>
   )

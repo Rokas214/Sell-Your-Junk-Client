@@ -38,7 +38,8 @@ const Register = () => {
                         body: JSON.stringify(userInputs)
                 })
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => console.log(data.err.details[0].massage))
+                .catch(err => alert(err))
             })} >
                 <input type="email" onChange={((e) => setUserInputs({...userInputs, email: e.target.value}))} placeholder='Email'  />
                 <input type="password" onChange={((e) => setUserInputs({...userInputs, passwordOne: e.target.value}))} placeholder='Password'  />
