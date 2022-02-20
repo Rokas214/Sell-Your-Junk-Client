@@ -12,7 +12,6 @@ const ProductCard = ({item}) => {
         localStorage.setItem("id",item.id)
     }
 
-    
   return <div className='card' >
       <img src={item.image} alt="image" />
       <h1>Price: {item.price}€</h1>
@@ -28,7 +27,6 @@ const ProductCard = ({item}) => {
               body: JSON.stringify({id: item.id})
           })
       }} >Delete</button>
-      
   </div>;
 };
 
