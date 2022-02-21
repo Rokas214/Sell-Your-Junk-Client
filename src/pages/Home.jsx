@@ -30,7 +30,6 @@ const Home = () => {
         <div>
             <div className='nav' >
                 <div className='links' >
-                    <Link className='link' to='/home'>All Products</Link>
                     <Link className='link' to='/add'>Add Product</Link>
                     <Link className='link' to='/products'>My Products</Link>
                 </div>
@@ -40,7 +39,7 @@ const Home = () => {
         </div>
         <div className='cardComp'>
             {!getData && <h1>Loading...</h1> }
-            {getData && getData.map(item => <ProductCard item={item} image={item.image} key={item.id} /> )}
+            {getData && getData.map(item => <ProductCard display={"none"} link={"/viewsinglepost"} item={item} image={item.image} key={item.id} /> )}
         </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ const SinglePostCard = ({item}) => {
                 })
             }} >Delete</button>      
         </div>
-        <div className="edit-form">
+        <div className="edit-form" >
             <h1>Edit product information</h1>
             <input onChange={((e) => setInputs({...getInputs, price: e.target.value}))} placeholder='price' />
             <input onChange={((e) => setInputs({...getInputs, description: e.target.value}))} placeholder='description' />

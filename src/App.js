@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Products from "./pages/Products";
 import SinglePost from "./pages/SinglePost";
 import AllProducts from "./pages/AllProducts";
+import ViewSinglePost from "./pages/ViewSinglePost";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				<Route exact path='/products' element={<Products />} />
 				<Route exact path='/singlepost/:id' element={<SinglePost />} />
 				<Route exact path='/allproducts' element={<AllProducts />} />
+				<Route exact path='/viewsinglepost' element={<ViewSinglePost />} />
 			</Routes>
 		</BrowserRouter>
 	);
