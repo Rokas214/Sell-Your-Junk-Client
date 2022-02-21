@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import SinglePost from "./pages/SinglePost";
 import AllProducts from "./pages/AllProducts";
 import ViewSinglePost from "./pages/ViewSinglePost";
+import Cart from "./pages/Cart";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 				<Route exact path='/singlepost/:id' element={<SinglePost />} />
 				<Route exact path='/allproducts' element={<AllProducts />} />
 				<Route exact path='/viewsinglepost' element={<ViewSinglePost />} />
+				<Route exact path='/cart' element={<Cart />} />
 			</Routes>
 		</BrowserRouter>
 	);

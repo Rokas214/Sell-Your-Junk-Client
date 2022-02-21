@@ -4,26 +4,24 @@ import { Link,useParams } from 'react-router-dom';
 import SingOut from '../components/SingOut';
 import "../components/style.css"
 import Notification from '../components/Notification';
-const Home = () => {
+const Cart = () => {
 
-    const {id} = useParams()
-    const [notification, setNotification] = useState(false)
     const [getData, setData] = useState()
-        useEffect(() => {
-            fetch("http://localhost:8080/v1/allproducts",{
-                headers:{
-                    email: localStorage.getItem("email"),
-                    authorization: `Bearer ${localStorage.getItem("token")}`
-                }
-            })
-            .then(res => res.json())
-            .then(data => setData(data))
-        },[])
-        
-        
-        
+    const [notification, setNotification] = useState(false)
+    useEffect(() => {
+        fetch("http://localhost:8080/v1/cart",{
+            headers:{
+                email: localStorage.getItem("email"),
+                id: localStorage.getItem("id"),
+                authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => setData(data))
+    },[])
+
   return (
-      <div className='page-width' >
+            <div className='page-width' >
             <div>
                 {notification && <Notification>Successfully logged out</Notification> }
             </div>
@@ -34,19 +32,22 @@ const Home = () => {
                     <Link className='link' to='/products'>My Products</Link>
                 </div>
                 <div className='singout' >
-                    <Link style={{margin: "0.5rem"}} className='link' to="/cart">Cart</Link>
+                    <div className='cart' >
+                        <h4>Cart</h4>
+                    </div>
                     <SingOut setNotification={setNotification} />
                 </div> 
         </div>
         <div className='cardComp'>
             {!getData && <h1>Loading...</h1> }
-            {getData && getData.map(item => <ProductCard display={"none"} link={"/viewsinglepost"} item={item} image={item.image} key={item.id} /> )}
+            {getData && getData.map(item => <ProductCard display={"none"} link={"/viewsinglepost"} item={item} image={item.image} text={"Remove from cart"} key={item.id} /> )}
             
         </div>
         </div>
-      </div>
+        </div>
 
-  )
-};
 
-export default Home;
+        )
+}
+
+export default Cart

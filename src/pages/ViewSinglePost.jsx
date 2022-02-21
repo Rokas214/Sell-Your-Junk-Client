@@ -34,7 +34,7 @@ const ViewSinglePost = () => {
                     <SingOut setNotification={setNotification} />
                 </div> 
         </div>
-       {getData && getData.map((item) =>   <ViewSinglePostCard displa={"none"} item={item} key={item.id} /> )}
+       {getData && getData.map((item) =>   <ViewSinglePostCard item={item} key={item.id} /> )}
     </div>
   )
 }

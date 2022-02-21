@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SinglePost from '../pages/SinglePost';
 
-const ProductCard = ({item, display, link}) => {
+const ProductCard = ({item, display, link,text}) => {
     const [getId, setId] = useState()
+    const [getData, setData] = useState()
 
     function goToSinglePost(){
         setId(item.id)
@@ -27,6 +28,20 @@ const ProductCard = ({item, display, link}) => {
               body: JSON.stringify({id: item.id})
           })
       }} >Delete</button>
+      <div >
+        <button className='button' onClick={(e) => {
+            e.preventDefault()
+            localStorage.setItem("id", item.id)
+            fetch("http://localhost:8080/v1/cart", {
+                method: "POST",
+                headers:{
+                    email: localStorage.getItem("email"),
+                    id: localStorage.getItem("id"),
+                    authorization: `Bearer ${localStorage.getItem("token")}`
+                },
+            })
+    }} >{text || "Add to cart"}</button>
+      </div>
   </div>;
 };
 

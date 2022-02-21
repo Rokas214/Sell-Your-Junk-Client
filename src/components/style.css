@@ -48,6 +48,10 @@ textarea {
 	border: 2px solid black;
 }
 
+.cart {
+	text-align: center;
+}
+
 .login-form {
 	text-align: center;
 	margin-top: 5rem;
@@ -182,6 +186,13 @@ textarea {
 
 .single-card img {
 	width: 50%;
+}
+
+.cart {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: -1rem;
+	margin-right: 1.5rem;
 }
 
 @media only screen and (max-width: 1000px) {
